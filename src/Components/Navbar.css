@@ -1,0 +1,13 @@
+.nav {
+    background-color: black;
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav>button {
+    padding: 10px 20px;
+    background-color: #81a4ae;
+    color: white;
+    cursor: pointer;
+}
