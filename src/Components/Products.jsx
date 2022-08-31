@@ -1,7 +1,9 @@
 import "./Products.css";
-import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 
 const Products = ({ products, add }) => {
+  const navigate = useNavigate();
   const [cart, setToCart] = useState(
     JSON.parse(localStorage.getItem("cartItems")) || []
   );
@@ -29,7 +31,10 @@ const Products = ({ products, add }) => {
   };
 
   return (
-    <div className="productDiv">
+    <div
+      className="productDiv"
+      onClick={() => navigate(`/${products.id}`, { state: products })}
+    >
       <img src={products.image_url} alt="#" />
       <div>
         <h5>{products.product_name}</h5>

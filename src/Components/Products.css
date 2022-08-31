@@ -32,6 +32,12 @@
     margin-bottom: 5px;
 }
 
+.productDiv>div>input {
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
 .productDiv>div>button {
     background-color: #59b4ff;
     color: white;

@@ -11,4 +11,17 @@ const getProducts = () => (dispatch) => {
     .catch((e) => dispatch({ type: types.GET_PRODUCTS_FAILURE, payload: e }));
 };
 
-export { getProducts };
+const addProductReview = (payload) => (dispatch) => {
+  dispatch({ type: types.PATCH_PRODUCTS_REQUEST });
+  return axios
+    .patch(
+      `https://my-e-commerce-app-server.herokuapp.com/api/products/${payload.id}`,
+      { review: payload.review }
+    )
+    .then((res) => {
+      dispatch({ type: types.PATCH_PRODUCTS_SUCCESS, payload: res.data });
+    })
+    .catch((e) => dispatch({ type: types.PATCH_PRODUCTS_FAILURE, payload: e }));
+};
+
+export { getProducts, addProductReview };
