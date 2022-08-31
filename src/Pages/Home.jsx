@@ -13,16 +13,7 @@ const Home = () => {
 
   return (
     <>
-      <div
-        style={{
-          width: "100%",
-          margin: "auto",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "10px",
-          marginTop: "50px",
-        }}
-      >
+      <div className="homeProductsPage">
         {products.map((e) => (
           <Products key={e.id} products={e} add={"Add to cart"} />
         ))}
