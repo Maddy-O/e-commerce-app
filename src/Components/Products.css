@@ -38,7 +38,15 @@
     margin-bottom: 5px;
 }
 
-.productDiv>div>button {
+.productDiv>div>div {
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.productDiv button {
     background-color: #59b4ff;
     color: white;
     padding: 7px 15px;
@@ -46,7 +54,7 @@
     border-radius: 5px;
 }
 
-.productDiv>div>button:hover {
+.productDiv button:hover {
     background-color: gray;
     padding: 7px 15px;
     border: black;

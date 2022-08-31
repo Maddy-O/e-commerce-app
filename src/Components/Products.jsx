@@ -31,32 +31,38 @@ const Products = ({ products, add }) => {
   };
 
   return (
-    <div
-      className="productDiv"
-      onClick={() => navigate(`/${products.id}`, { state: products })}
-    >
+    <div className="productDiv">
       <img src={products.image_url} alt="#" />
       <div>
         <h5>{products.product_name}</h5>
         <h5>₹ {products.price}</h5>
         <h5>{products.review}</h5>
-        {add == "Add to cart" ? (
-          <button
-            onClick={() => {
-              handleAddCart(products.id);
-            }}
-          >
-            Add to cart
-          </button>
-        ) : (
-          <button
-            onClick={() => {
-              handleRemove(products.id);
-            }}
-          >
-            Remove
-          </button>
-        )}
+        <div>
+          {add == "Add to cart" ? (
+            <button
+              onClick={() => {
+                handleAddCart(products.id);
+              }}
+            >
+              Add to cart
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                handleRemove(products.id);
+              }}
+            >
+              Remove
+            </button>
+          )}
+          {add == "Add to cart" ? (
+            <button
+              onClick={() => navigate(`/${products.id}`, { state: products })}
+            >
+              Review
+            </button>
+          ) : null}
+        </div>
       </div>
     </div>
   );
